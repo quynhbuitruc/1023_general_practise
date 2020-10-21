@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đổi met sang feet</title>
+</head>
+<body>
+    Nhập độ dài (m): <input id="Meter" type="number">
+    <button onclick="Cal()">Đổi sang độ dài (ft)</button>
+    <p id="display"></p>
+    <script>
+        function Cal() {
+            let meter = Number(document.getElementById("Meter").value);
+            let Feet = meter * 3.2808
+            document.getElementById("display").innerText = meter + " " + "m(s) =" + " " + Feet + " " + "ft(s)";
+            document.getElementById("Meter").value = ""
+        }
+    </script>
+</body>
+</html>
