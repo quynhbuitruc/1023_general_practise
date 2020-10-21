@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đổi nhiệt độ</title>
+</head>
+<body>
+    Nhập nhiệt độ Celcius: <input id="TempC" type="number">
+    <button onclick="Cal()">Đổi sang độ F</button>
+    <p id="display"></p>
+    <script>
+        function Cal() {
+            let TempC = Number(document.getElementById("TempC").value);
+            let tempF = TempC * 9/5 + 32
+            document.getElementById("display").innerText = TempC + " " + "độ C =" + " " + tempF + " " + "độ F";
+            document.getElementById("TempC").value = ""
+        }
+    </script>
+</body>
+</html>
