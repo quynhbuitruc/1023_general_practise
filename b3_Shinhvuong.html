@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diện tích hình vuông</title>
+</head>
+<body>
+    Nhập độ dài cạnh hình vuông (m): <input id="canhA" type="number">
+    <button onclick="Cal()">Tính diện tích</button>
+    <p id="display"></p>
+    <script>
+        function Cal() {
+            let canhA = Number(document.getElementById("canhA").value);
+            let Stich = canhA * canhA
+            document.getElementById("display").innerText = 
+            "Diện tích hình vuông với chiều dài cạnh" + " " + canhA + " " 
+            + "m là:" + " " + Stich + " " + "m2";
+            document.getElementById("canhA").value = ""
+        }
+    </script>
+</body>
+</html>
