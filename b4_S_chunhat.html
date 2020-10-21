@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tính diện tích chữ nhật</title>
+</head>
+<body>
+    <p> Nhập chiều dài hình chữ nhật (m): <input id="ChieuDai" type="number"></p>
+    <p> Nhập chiều rộng hình chữ nhật (m): <input id="ChieuRong" type="number"></p>
+    <p> <button onclick="Cal()">Tính diện tích</button> </p>
+    Diện tích hình chữ nhật có 
+    <p id="displayDR"></p>
+    <p id="display"></p>
+    <script>
+        function Cal() {
+            let chieuD = Number(document.getElementById("ChieuDai").value);
+            let chieuR = Number(document.getElementById("ChieuRong").value);
+            let Scn = chieuD * chieuR
+            document.getElementById("displayDR").innerText = "chiều dài:" + " " + chieuD + "m và chiều rộng:" + " " + chieuR + "m";
+            document.getElementById("display").innerText = "là:" + " " + Scn + " " + "m2"
+            document.getElementById("ChieuRong").value = ""
+            document.getElementById("ChieuDai").value = ""
+        }
+    </script>
+</body>
+</html>
