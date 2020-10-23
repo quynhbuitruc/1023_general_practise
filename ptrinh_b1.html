@@ -18,13 +18,15 @@
     <script>
         function Cal() {
             let A = Number(document.getElementById("so1").value)
-            if (A == 0) {
-                alert("Nhập lại a")
-                document.getElementById("so1").value = ""
-            } else {
-                let B = Number(document.getElementById("so2").value)
-                let X = (0 - B) / A
-                document.getElementById("display").value = X
+            let B = Number(document.getElementById("so2").value)
+            switch (A) {
+                case 0:
+                    alert("Nhập lại a")
+                    document.getElementById("so1").value = ""
+                default:
+                    let X = (0 - B) / A
+                    document.getElementById("display").value = X
+                    break;
             }
         }
     </script>
