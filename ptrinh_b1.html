@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giải phương trình bậc 1</title>
+</head>
+
+<body>
+    <p>Phương trình bậc 1: </p>
+    <p>ax + b = 0</p>
+    <p>Nhập a: <input id="so1" type="number"></p>
+    <p>Nhập b: <input id="so2" type="number"></p>
+    <p>
+        x <button onclick="Cal()"> = </button> <input id="display" type="number">
+    </p>
+    <script>
+        function Cal() {
+            let A = Number(document.getElementById("so1").value)
+            let B = Number(document.getElementById("so2").value)
+            let X = (0 - B) / A
+            document.getElementById("display").value = X
+        }
+    </script>
+</body>
+
+</html>
