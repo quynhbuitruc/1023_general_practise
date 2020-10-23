@@ -84,10 +84,26 @@
             <td id="dongia" name="b7" value="2461">2461</td>
         </tr>
     </table>
-    <p> Số kWh ngày đầu tháng: <input id="NoNgay1" type="number"></p>
-    <p> Số kWh ngày cuối tháng: <input id="NoCuoithang" type="number"></p>
-    <P> <button onclick="TieuThu()">Lượng điện tiêu thụ:</button> <input id="Sum" type="number"> kWh</P>
-    <p> <button onclick="GiaTien()">Thành tiền:</button> <input id="Price" type="number"> đồng </p>
+    <p> Số kWh ngày 10: <input id="SoDau" type="number"></p>
+    <p> Số kWh ngày 11: <input id="SoCuoi" type="number"></p>
+    <button onclick="TinhToan()">Tính</button>
+    <P> Lượng điện tiêu thụ: <input id="Sum" type="number"> kWh</P>
+    <p> Thành tiền: <input id="Price" type="number"> đồng </p>
+    <script>
+        function TinhToan() {
+            let DauThang = Number(document.getElementById("SoDau").value)
+            let CuoiThang = Number(document.getElementById("SoCuoi").value)
+            let SUM = CuoiThang - DauThang
+            document.getElementById("Sum").value = SUM
+            if (SUM >=0 && SUM<=50) {
+                PRice = SUM * 1678
+                document.getElementById("Price").value = PRice
+            } else {
+                document.getElementById("Price").value = "Chưa tính"
+            }
+        }
+
+    </script>
 </body>
 
 </html>
