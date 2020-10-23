@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giải phương trình bậc 2</title>
+</head>
+
+<body>
+    <p>Phương trình bậc 2 có dạng: </p>
+    <p>ax <sup>2</sup> + bx + c = 0</p>
+    <p>Nhập a: <input id="so1" type="number"></p>
+    <p>Nhập b: <input id="so2" type="number"></p>
+    <p>Nhập c: <input id="so3" type="number"></p>
+    <p> <button onclick="Cal()"> Tính x <sub>1</sub>, x <sub>2</sub> </button></p>
+    <p>
+        x <sub>1</sub> = <input id="display1" type="number">
+    </p>
+    <p>
+        x <sub>2</sub> = <input id="display2" type="number">
+    </p>
+    <script>
+        function Cal() {
+            let A = Number(document.getElementById("so1").value)
+            let B = Number(document.getElementById("so2").value)
+            let C = Number(document.getElementById("so3").value)
+            let SABC = A + B + C
+        }
+    </script>
+</body>
+
+</html>
