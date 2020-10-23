@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tính diện tích tam giác vuông</title>
+</head>
+<body>
+    <p> Nhập chiều dài cạnh bên a (m): <input id="ChieuDaiA" type="number"></p>
+    <p> Nhập chiều dài cạnh bên b (m): <input id="ChieuDaiB" type="number"></p>
+    <p> <button onclick="Cal()">Tính diện tích</button> </p>
+    Diện tích hình tam giác vuông có 
+    <p id="displayDR"></p>
+    <p id="display"></p>
+    <script>
+        function Cal() {
+            let chieuDA = Number(document.getElementById("ChieuDaiA").value);
+            let chieuDB = Number(document.getElementById("ChieuDaiB").value);
+            let StgVuong = (chieuDA * chieuDB) / 2
+            document.getElementById("displayDR").innerText = "chiều dài cạnh a:" + " " + chieuDA + "m và chiều dài cạnh b:" + " " + chieuDB + "m";
+            document.getElementById("display").innerText = "là:" + " " + StgVuong + " " + "m2"
+            document.getElementById("ChieuDaiB").value = ""
+            document.getElementById("ChieuDaiA").value = ""
+        }
+    </script>
+</body>
+</html>
