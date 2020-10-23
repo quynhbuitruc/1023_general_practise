@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tính giá điện</title>
+    <style>
+        table {
+            border: 2px solid grey;
+            border-collapse: collapse;
+        }
+
+        th,
+        tr,
+        td {
+            border-top: 1px dotted black;
+            border-left: 2px solid grey;
+            height: 25px;
+        }
+
+        #no {
+            text-align: center;
+        }
+
+        #BAC {
+            padding-left: 15px
+        }
+
+        #dongia{
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <table>
+        <tr>
+            <th rowspan="2" style="border: 2px solid grey; width: 50px">TT</th>
+            <th rowspan="2" style="border: 2px solid grey; width: 350px">Nhóm đối tượng khách hàng</th>
+            <th style="border-bottom: white; width: 120px;">Giá bán điện</th>
+        </tr>
+        <tr>
+            <th style="border-bottom: 2px solid grey">(đồng/kWh)</th>
+        </tr>
+        <tr>
+            <td id="no">1</td>
+            <td id="BAC">Giá bán lẻ điện sinh hoạt</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td id="no"></td>
+            <td id="BAC">Bậc 1: Cho kWh từ 0 - 50</td>
+            <td id="dongia" name="b1" value="1678">1.678</td>
+        </tr>
+        <tr>
+            <td id="no"></td>
+            <td id="BAC">Bậc 2: Cho kWh từ 51 - 100</td>
+            <td id="dongia" name="b2" value="1734">1734</td>
+        </tr>
+        <tr>
+            <td id="no"></td>
+            <td id="BAC">Bậc 3: Cho kWh từ 101 - 200</td>
+            <td id="dongia" name="b3" value="2014">2014</td>
+        </tr>
+        <tr>
+            <td id="no"></td>
+            <td id="BAC">Bậc 4: Cho kWh từ 201 - 300</td>
+            <td id="dongia" name="b4" value="2536">2536</td>
+        </tr>
+        <tr>
+            <td id="no"></td>
+            <td id="BAC">Bậc 5: Cho kWh từ 301 - 400</td>
+            <td id="dongia" name="b5" value="2834">2834</td>
+        </tr>
+        <tr>
+            <td id="no"></td>
+            <td id="BAC">Bậc 6: Cho kWh từ 401 trở lên</td>
+            <td id="dongia" name="b6" value="2927">2927</td>
+        </tr>
+        <tr>
+            <td id="no">2</td>
+            <td id="BAC">Giá bán lẻ điện sinh hoạt dùng công tơ thẻ trả trước</td>
+            <td id="dongia" name="b7" value="2461">2461</td>
+        </tr>
+    </table>
+    <p> Số kWh ngày đầu tháng: <input id="NoNgay1" type="number"></p>
+    <p> Số kWh ngày cuối tháng: <input id="NoCuoithang" type="number"></p>
+    <P> <button onclick="TieuThu()">Lượng điện tiêu thụ:</button> <input id="Sum" type="number"> kWh</P>
+    <p> <button onclick="GiaTien()">Thành tiền:</button> <input id="Price" type="number"> đồng </p>
+</body>
+
+</html>
