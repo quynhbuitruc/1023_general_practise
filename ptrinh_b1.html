@@ -18,9 +18,14 @@
     <script>
         function Cal() {
             let A = Number(document.getElementById("so1").value)
-            let B = Number(document.getElementById("so2").value)
-            let X = (0 - B) / A
-            document.getElementById("display").value = X
+            if (A == 0) {
+                alert("Nhập lại a")
+                document.getElementById("so1").value = ""
+            } else {
+                let B = Number(document.getElementById("so2").value)
+                let X = (0 - B) / A
+                document.getElementById("display").value = X
+            }
         }
     </script>
 </body>
