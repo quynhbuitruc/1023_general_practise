@@ -20,7 +20,33 @@
     </select>
     <button onclick="ShowPrice()"> Xem giá </button>
     <p id="Display"></p>
-    
+    <script>
+        function ShowPrice() {
+            let TyPe = document.getElementById("fruit").value
+            switch (TyPe) {
+                case "Chuối":
+                    document.getElementById("Display").innerText = 12000 + " " + "đồng/kg"
+                    break;
+                case "Thanh Long":
+                    document.getElementById("Display").innerText = 22000 + " " + "đồng/kg"
+                    break;
+                case "Sầu Riêng":
+                    document.getElementById("Display").innerText = 50000 + " " + "đồng/kg"
+                    break;
+                case "Măng Cụt":
+                    document.getElementById("Display").innerText = 60000 + " " + "đồng/kg"
+                    break;
+                case "Nhãn":
+                    document.getElementById("Display").innerText = 27000 + " " + "đồng/kg"
+                    break;
+                case "Vải":
+                    document.getElementById("Display").innerText = 32000 + " " + "đồng/kg"
+                    break;
+                default:
+                    document.getElementById("Display").innerText = 000 + " " + "đồng/kg"
+            }
+        }
+    </script>
 </body>
 
 </html>
