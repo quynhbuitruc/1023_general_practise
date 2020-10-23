@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đây có phải là tam giác?</title>
+</head>
+
+<body>
+    <p> Nhập cạnh 1: <input id="canh1" type="number"></p>
+    <p> Nhập cạnh 2: <input id="canh2" type="number"></p>
+    <p> Nhập cạnh 3: <input id="canh3" type="number"></p>
+    <button onclick="Check()">Có phải là tam giác không?</button>
+    <p id="Display"></p>
+    <script>
+        function Check() {
+            let C1 = Number(document.getElementById("canh1").value)
+            let C2 = Number(document.getElementById("canh2").value)
+            let C3 = Number(document.getElementById("canh3").value)
+            let Sum = C1 + C2 + C3
+            if (Sum == 0) {
+                document.getElementById("Display").innerText = "Nhập lại 3 cạnh"
+            } else if (Sum < 0) {
+                document.getElementById("Display").innerText = "Nhập lại 3 cạnh"
+            }
+        }
+    </script>
+</body>
+
+</html>
