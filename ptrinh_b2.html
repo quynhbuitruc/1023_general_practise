@@ -27,14 +27,35 @@
             let C = Number(document.getElementById("so3").value)
             let SABC = B * B - 4 * A * C
             if (A + B + C == 0) {
-                document.getElementById("display1").value = 1;
+                document.getElementById("display1").value = 1
                 document.getElementById("display2").value = C / A
                 document.getElementById("so1").value = ""
                 document.getElementById("so2").value = ""
                 document.getElementById("so3").value = ""
             } else if (A - B + C == 0) {
-                document.getElementById("display1").value = -1;
+                document.getElementById("display1").value = -1
                 document.getElementById("display2").value = -C / A
+                document.getElementById("so1").value = ""
+                document.getElementById("so2").value = ""
+                document.getElementById("so3").value = ""
+            } else if (SABC == 0) {
+                let X = -B / ( 2 * A )
+                document.getElementById("display1").value = X
+                document.getElementById("display2").value = X
+                document.getElementById("so1").value = ""
+                document.getElementById("so2").value = ""
+                document.getElementById("so3").value = ""
+            } else if (SABC > 0) {
+                let X1 = ((-B) + Math.sqrt(SABC)) / (2 * A)
+                let X2 = ((-B) - Math.sqrt(SABC)) / (2 * A)
+                document.getElementById("display1").value = X1
+                document.getElementById("display2").value = X2
+                document.getElementById("so1").value = ""
+                document.getElementById("so2").value = ""
+                document.getElementById("so3").value = ""
+            } else {
+                document.getElementById("display1").value = "vô nghiệm"
+                document.getElementById("display2").value = "vô nghiệm"
                 document.getElementById("so1").value = ""
                 document.getElementById("so2").value = ""
                 document.getElementById("so3").value = ""
