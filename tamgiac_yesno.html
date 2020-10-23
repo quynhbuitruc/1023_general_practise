@@ -29,7 +29,25 @@
                 document.getElementById("canh1").value = ""
                 document.getElementById("canh2").value = ""
                 document.getElementById("canh3").value = ""
-            } 
+            } else if (((C1 + C2) > C3) && ((C1 + C3) > C2) && ((C3 + C2) > C1)) {
+                if ((C1 = C2) && (C2 = C3)) {
+                    document.getElementById("Display").innerText = "Đây là 3 cạnh của 1 tam giác đều"
+                } else if ((C1 = C2) || (C2 = C3) || (C1 = C3)) {
+                    if (((C1 * C1) = (C2 * C2) + (C3 * C3))
+                        || ((C2 * C2) = (C1 * C1) + (C3 * C3))
+                        || ((C3 * C3) = (C1 * C1) + (C2 * C2))) {
+                        document.getElementById("Display").innerText = "Đây là 3 cạnh của 1 tam giác vuông cân"
+                    } else {
+                        document.getElementById("Display").innerText = "Đây là 3 cạnh của 1 tam giác cân"
+                    }
+                } else if (((C1 * C1) = (C2 * C2) + (C3 * C3))
+                    || ((C2 * C2) = (C1 * C1) + (C3 * C3))
+                    || ((C3 * C3) = (C1 * C1) + (C2 * C2))) {
+                    document.getElementById("Display").innerText = "Đây là 3 cạnh của 1 tam giác vuông"
+                } else {
+                    document.getElementById("Display").innerText = "Không phải là 3 cạnh của 1 tam giác"
+                }
+            }
         }
     </script>
 </body>
