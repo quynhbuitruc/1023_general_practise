@@ -21,9 +21,15 @@
             let Sum = C1 + C2 + C3
             if (Sum == 0) {
                 document.getElementById("Display").innerText = "Nhập lại 3 cạnh"
+                document.getElementById("canh1").value = ""
+                document.getElementById("canh2").value = ""
+                document.getElementById("canh3").value = ""
             } else if (Sum < 0) {
                 document.getElementById("Display").innerText = "Nhập lại 3 cạnh"
-            }
+                document.getElementById("canh1").value = ""
+                document.getElementById("canh2").value = ""
+                document.getElementById("canh3").value = ""
+            } 
         }
     </script>
 </body>
