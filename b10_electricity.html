@@ -27,7 +27,7 @@
             padding-left: 15px
         }
 
-        #dongia{
+        #dongia {
             text-align: center;
         }
     </style>
@@ -37,7 +37,7 @@
     <table>
         <tr>
             <th rowspan="2" style="border: 2px solid grey; width: 50px">TT</th>
-            <th rowspan="2" style="border: 2px solid grey; width: 350px">Nhóm đối tượng khách hàng</th>
+            <th rowspan="2" style="border: 2px solid grey; width: 350px">Nhóm đối tượng khách hàng: Sinh hoạt</th>
             <th style="border-bottom: white; width: 120px;">Giá bán điện</th>
         </tr>
         <tr>
@@ -45,48 +45,54 @@
         </tr>
         <tr>
             <td id="no">1</td>
-            <td id="BAC">Giá bán lẻ điện sinh hoạt</td>
+            <td id="BAC">Giá bán lẻ thường</td>
             <td></td>
         </tr>
         <tr>
             <td id="no"></td>
             <td id="BAC">Bậc 1: Cho kWh từ 0 - 50</td>
-            <td id="dongia" name="b1" value="1678">1.678</td>
+            <td id="dongia" name="b1">1.678</td>
         </tr>
         <tr>
             <td id="no"></td>
             <td id="BAC">Bậc 2: Cho kWh từ 51 - 100</td>
-            <td id="dongia" name="b2" value="1734">1734</td>
+            <td id="dongia" name="b2">1734</td>
         </tr>
         <tr>
             <td id="no"></td>
             <td id="BAC">Bậc 3: Cho kWh từ 101 - 200</td>
-            <td id="dongia" name="b3" value="2014">2014</td>
+            <td id="dongia" name="b3">2014</td>
         </tr>
         <tr>
             <td id="no"></td>
             <td id="BAC">Bậc 4: Cho kWh từ 201 - 300</td>
-            <td id="dongia" name="b4" value="2536">2536</td>
+            <td id="dongia" name="b4">2536</td>
         </tr>
         <tr>
             <td id="no"></td>
             <td id="BAC">Bậc 5: Cho kWh từ 301 - 400</td>
-            <td id="dongia" name="b5" value="2834">2834</td>
+            <td id="dongia" name="b5">2834</td>
         </tr>
         <tr>
             <td id="no"></td>
             <td id="BAC">Bậc 6: Cho kWh từ 401 trở lên</td>
-            <td id="dongia" name="b6" value="2927">2927</td>
+            <td id="dongia" name="b6">2927</td>
         </tr>
         <tr>
             <td id="no">2</td>
-            <td id="BAC">Giá bán lẻ điện sinh hoạt dùng công tơ thẻ trả trước</td>
-            <td id="dongia" name="b7" value="2461">2461</td>
+            <td id="BAC">Giá bán lẻ trả trước</td>
+            <td id="dongia" name="b7">2461</td>
         </tr>
     </table>
+    <p>Lựa chọn TT:
+        <select id="Type">
+            <option id="Type" value="1"> 1. Giá bán lẻ thường </option>
+            <option id="Type" value="2"> 2. Giá bán lẻ trả trước </option>
+        </select>
+    </p>
     <p> Số kWh ngày 10: <input id="SoDau" type="number"></p>
     <p> Số kWh ngày 11: <input id="SoCuoi" type="number"></p>
-    <button onclick="TinhToan()">Tính</button>
+    <p><button onclick="TinhToan()">Tính</button></p>
     <P> Lượng điện tiêu thụ: <input id="Sum" type="number"> kWh</P>
     <p> Thành tiền: <input id="Price" type="number"> đồng </p>
     <script>
@@ -95,11 +101,28 @@
             let CuoiThang = Number(document.getElementById("SoCuoi").value)
             let SUM = CuoiThang - DauThang
             document.getElementById("Sum").value = SUM
-            if (SUM >=0 && SUM<=50) {
-                PRice = SUM * 1678
-                document.getElementById("Price").value = PRice
-            } else {
-                document.getElementById("Price").value = "Chưa tính"
+            let TYPE = document.getElementById("Type").value
+            switch (TYPE) {
+                case "1":
+                    if (SUM >= 0 && SUM <= 50) {
+                        PRiceB1 = SUM * 1678
+                        document.getElementById("Price").value = PRiceB1
+                    } else if (SUM >= 51 && SUM <= 100) {
+                        PRiceB1 = 50 * 1678
+                        PRiceB2 = PRiceB1 + ((SUM - 50) * 1734)
+                        document.getElementById("Price").value = PRiceB2
+                    } else if (SUM >= 51 && SUM <= 100) {
+                        PRiceB1 = 50 * 1678
+                        PRiceB2 = PRiceB1 + ((SUM - 50) * 1734)
+                        document.getElementById("Price").value = PRiceB2
+                    }
+                    else {
+                        document.getElementById("Price").value = "Chưa tính"
+                    }
+                    break;
+                case "2":
+                    let PRICE = SUM * 2461
+                    document.getElementById("Price").value = PRICE
             }
         }
 
