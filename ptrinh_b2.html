@@ -25,7 +25,16 @@
             let A = Number(document.getElementById("so1").value)
             let B = Number(document.getElementById("so2").value)
             let C = Number(document.getElementById("so3").value)
-            let SABC = A + B + C
+            let SABC = B*B - 4*A*C 
+            if (A + B + C == 0) {
+                document.getElementById("display1").value = 1;
+                document.getElementById("display2").value = (0-B)/(2*A)
+                document.getElementById("so1").value = ""
+                document.getElementById("so2").value = ""
+                document.getElementById("so3").value = ""
+            } else if (A - B + C == 0) {
+
+            }
         }
     </script>
 </body>
